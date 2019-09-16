@@ -63,26 +63,11 @@ public class FragmentWeather extends Fragment {
             switch (v.getId())
             {
                 case R.id.btnRefresh:
+                    //API 정보 갱신하는 부분.
                     break;
                 case R.id.btnPlusCity:
-                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                    LayoutInflater inflater = requireActivity().getLayoutInflater();
-                    builder.setView(inflater.inflate(R.layout.weather_dialog_layout, null))
-                            .setPositiveButton(R.id.btnSearch, new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-
-                                }
-                            })
-                            .setNegativeButton(R.id.btnCancel, new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-
-                                }
-                            })
-                            .show();
-
-
+                    CustomDialogWeather dialog = CustomDialogWeather.getInstance();
+                    dialog.show(getFragmentManager(), CustomDialogWeather.TAG_EVENT_DIALOG);
                     break;
             }
         }
