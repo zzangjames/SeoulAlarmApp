@@ -1,18 +1,15 @@
 package com.example.seoulalarm;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,14 +31,11 @@ public class MainActivity extends AppCompatActivity {
 
         InitView();
         InitFragment();
-        ChangeCity();
-        RefreshInfo();
+        ListViewSettings();
     }
 
-    private void RefreshInfo() {
-    }
+    private void ListViewSettings() {
 
-    private void ChangeCity() {
     }
 
     private void InitFragment(){
@@ -70,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
         imgBottomMenuWeather.setOnClickListener(bottomMenuImgHandler);
         imgBottomMenuMemo.setOnClickListener(bottomMenuImgHandler);
         imgBottomMenuAlarm.setOnClickListener(bottomMenuImgHandler);
+
+        fragmentContainer = findViewById(R.id.fragmentContainer);
 
     }
 
